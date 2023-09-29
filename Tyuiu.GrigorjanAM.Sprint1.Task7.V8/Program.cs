@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.GrigorjanAM.Sprint1.Task6.V16.Lib;
-namespace Tyuiu.GrigorjanAM.Sprint1.Task6.V16
+using Tyuiu.GrigorjanAM.Sprint1.Task7.V8.Lib;
+
+namespace Tyuiu.GrigorjanAM.Sprint1.Task7.V8
 {
     class Program
     {
@@ -15,36 +16,33 @@ namespace Tyuiu.GrigorjanAM.Sprint1.Task6.V16
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #1                                                               *");
             Console.WriteLine("* Тема: Базовые навыки работы в C#                                        *");
-            Console.WriteLine("* Задание #6                                                              *");
-            Console.WriteLine("* Вариант #16                                                             *");
+            Console.WriteLine("* Задание #7                                                              *");
+            Console.WriteLine("* Вариант #8                                                              *");
             Console.WriteLine("* Выполнил: Григорян Арсен Мовсесович | ИИПБ-23-3                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу, которая принимает на вход строку,                   *");
-            Console.WriteLine("* а затем выясняет, есть ли в ней '!' и '?                                *");
-            
+            Console.WriteLine("* Написать программу, которая принимает на вход значения x и y,           *");
+            Console.WriteLine("* а затем вычисляет результат выполнения формулы:                         *");
+            Console.WriteLine("* z  = x * ln(x) + y / (cos(x) -  x / 3).                                 *");
+
             Console.WriteLine("*                                                                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            string x;
+            double x;
+            double y;
 
-            Console.WriteLine("Введите строку, чтобы проверить, есть ли в ней знаки '!' и '?' :");
-            x = Convert.ToString(Console.ReadLine());
+
+            Console.WriteLine("Введите значение X: ");
+            x = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите значение Y: ");
+            y = Convert.ToDouble(Console.ReadLine());
+            
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-
-            if (ds.CheckSpecSymbols(x) == true)
-                Console.WriteLine("В строке есть оба знака '!' и '?'");
-            else if (x.Contains("!"))
-                Console.WriteLine("В строке есть только знак '!'");
-            else if (x.Contains("?"))
-                Console.WriteLine("В строке есть только знак '?'");
-            else
-                Console.WriteLine("В строке нет обоих знаков '!' и '?'");
+            Console.WriteLine(ds.Calculate(x,y));
             Console.ReadKey();
-
         }
     }
 }
